@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Weather</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-title">Know Your Weather</div>
+        <div class="navbar-info">
+            <span class="current-time" id="current-time"></span>
+            <span class="nav-weather-icon" id="weather-nav"></span>
+            <span class="current-temp" id="temp-nav"></span>
+            <button class="location-btn" onclick="getLocation()">Use My Location</button>
+        </div>
+    </nav>
+    <div class="main-container">
+        <div class="outer-container">
+            <div class="container">
+                <div class="search-container">
+                    <span class="placeholder-text">Search City Name...</span>
+                    <span class="cloud-icon" style="display: none;">&#9729;</span>
+                    <div class="search-box" onclick="expandSearchBox()">
+                        <span class="search-icon">&#128269;</span>
+                        <input type="text" class="search-input" placeholder="Search City Name..." />
+                    </div>
+                    <button class="search-btn" onclick="handleSearch(event)">Search</button>
+                </div>
+                <div id="weather-info" class="weather-info">
+                    <h2>Weather Information</h2>
+                    <div class="weather-details">
+                        <div class="weather-icon" id="weather-icon">&#9728;</div>
+                        <div class="city-name" id="city-name">City Name</div>
+                        <div class="temperature" id="temperature">Temperature</div>
+                        <div class="wind-speed" id="wind-speed">Wind Speed</div>
+                        <div class="humidity" id="humidity">Humidity</div>
+                    </div>
+                    <button id="forecast-btn" class="forecast-btn" onclick="forecastDetails()">5-Day Forecast</button>
+                </div>
+                <div></div>
+            </div>
+            <div id="forecast-info" class="forecast-info visibility">
+                <h2 id="forecast-heading"></h2>
+                <div class="forecast-details" id="forecast-details"></div>
+                <button id="forecast-btn-close" class="forecast-btn" onclick="forecastBtnClose()">Close Forecast</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
